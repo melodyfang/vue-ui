@@ -37,13 +37,13 @@ export function createLoadingComponent (options) {
       loadingNumber = parseInt(loadingNumber) - 1
 
       if (!loadingNumber) {
-        removeClass(target, 'm-loading-parent--relative');
+        removeClass(target, 'el-loading-parent--relative');
         target.removeAttribute('loading-number')
       } else {
         target.setAttribute('loading-number', loadingNumber.toString())
       }
 
-      removeClass(target, 'm-loading-parent--hidden')
+      removeClass(target, 'el-loading-parent--hidden')
     }
 
     vm.$el?.parentNode?.removeChild(vm.$el)

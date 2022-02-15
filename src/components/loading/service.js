@@ -1,13 +1,9 @@
 import { isObject, isString, hyphenate } from './utils'
-import { getStyle } from './dom'
+import { getStyle, addClass } from './dom'
 import { createLoadingComponent } from './loading'
 import { nextTick } from 'vue'
 
 let fullscreenInstance = undefined
-
-export const Loading = function(options) {
-  const resolved = resolved(options)
-}
 
 export const Loading = function(options) {
   const resolved = resolveOptions(options)
@@ -16,7 +12,6 @@ export const Loading = function(options) {
     fullscreenInstance.close()
   }
 
-  // TODO:
   const instance = createLoadingComponent({
     ...resolved,
     closed: () => {
@@ -34,7 +29,8 @@ export const Loading = function(options) {
     return addClassList(resolved, resolved.parent, instance)
   }
 
-  let loadingNumber = resolved.parent.getArrtibute('loading-number')
+  console.log('resolved: ', resolved);
+  let loadingNumber = resolved.parent.getAttribute('loading-number')
   if (!loadingNumber) {
     loadingNumber = '1'
   } else {
@@ -65,7 +61,7 @@ const resolveOptions = (options) => {
   const {background, svg, svgViewBox, spinner, text, lock, customClass, visible} = options
 
   return {
-    parent: target === document.body || options.body ? document.body : target,
+    parent: ((target === document.body) || options.body) ? document.body : target,
     background: background || '',
     svg: svg || '',
     svgViewBox: svgViewBox || '',

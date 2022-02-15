@@ -1,7 +1,7 @@
 import { Loading } from './service'
 import { vLoading } from './directive'
 
-export const MLoading = {
+export const ElLoading = {
   install (app) {
     app.directive('loading', vLoading)
     app.config.flobalProperties.$loading = Loading
@@ -10,6 +10,7 @@ export const MLoading = {
   service: Loading
 }
 
-export default MLoading
+export default ElLoading
 
-export const MLoadingService = Loading
+export const ElLoadingDirective = vLoading
+export const ElLoadingService = Loading

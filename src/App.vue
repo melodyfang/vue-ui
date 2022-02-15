@@ -1,13 +1,23 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-// import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+
+// let loading = ref(false)
+// setTimeout(() => {
+//   loading.value = true
+// }, 1000)
+
+import { ElLoading } from './components/loading'
+
+ElLoading.service({
+  lock: true,
+  text: 'Loading',
+  background: 'rgba(0, 0, 0, 0.7)',
+})
 </script>
 
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
-  <div v-loading="true">hello</div>
+  <!-- <div v-loading="loading">hello</div> -->
+  <div></div>
 </template>
 
 <style>

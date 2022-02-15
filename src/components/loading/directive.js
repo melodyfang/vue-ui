@@ -45,7 +45,6 @@ const createInstance = (el, binding) => {
     options,
     instance: Loading(options)
   }
-
 }
 
 const updateOptions = (newOptions, originalOptions) => {
