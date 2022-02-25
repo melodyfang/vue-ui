@@ -1,10 +1,12 @@
 @use 'sass:math';
 
 @use 'mixins/mixins' as *;
-// @use 'mixins/var' as *;
+@use 'mixins/var' as *;
 @use 'common/var' as *;
 
+
 :root {
+  --el-color-primary: #409eff;
   @include set-component-css-var('loading', $loading);
 }
 
